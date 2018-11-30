@@ -1,25 +1,43 @@
-//
-//  ViewController.swift
-//  ReachabilityDemo
-//
-//  Created by NC2-28 on 19/07/18.
-//  Copyright © 2018 NC2-28. All rights reserved.
-//
-
 import UIKit
+import Reachability
 
 class ViewController: UIViewController {
-
+  
+  fileprivate var isConnected = true
+  
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
   }
-
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
+  
+  override func viewWillAppear(_ animated: Bool) {
+    ReachabilityManager.shared.addListener(listener: self as NetworkStatusListener)
   }
+  
+  override func viewDidDisappear(_ animated: Bool) {
+    super.viewDidDisappear(animated)
+    ReachabilityManager.shared.removeListener(listener: self as NetworkStatusListener)
+  }
+  
+  func changeBackgroundColor() {
+    view.backgroundColor = isConnected ? .green : .red
+  }
+}
 
-
+extension ViewController: NetworkStatusListener {
+  
+  func networkStatusDidChange(status: Reachability.Connection) {
+    switch status {
+    case .none:
+      debugPrint("Network became unreachable")
+    case .wifi:
+      changeBackgroundColor()
+      debugPrint("Network reachable through WiFi")
+    case .cellular:
+      changeBackgroundColor()
+      debugPrint("Network reachable through Cellular Data")
+    }
+    isConnected = status == .none ? false : true
+    changeBackgroundColor()
+  }
 }
 

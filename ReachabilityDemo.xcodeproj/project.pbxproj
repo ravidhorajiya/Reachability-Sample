@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 48;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,6 +12,8 @@
 		495A213C2100466700B1F246 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 495A213A2100466700B1F246 /* Main.storyboard */; };
 		495A213E2100466800B1F246 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 495A213D2100466800B1F246 /* Assets.xcassets */; };
 		495A21412100466800B1F246 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 495A213F2100466800B1F246 /* LaunchScreen.storyboard */; };
+		495A214A2100470600B1F246 /* ReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495A21492100470600B1F246 /* ReachabilityManager.swift */; };
+		8272FA728901401AD27C351D /* Pods_ReachabilityDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8265DCA02D521D5929C9ED7 /* Pods_ReachabilityDemo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,10 @@
 		495A213D2100466800B1F246 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		495A21402100466800B1F246 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		495A21422100466800B1F246 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		495A21492100470600B1F246 /* ReachabilityManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReachabilityManager.swift; sourceTree = "<group>"; };
+		A8265DCA02D521D5929C9ED7 /* Pods_ReachabilityDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReachabilityDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B431722E2CEAEBC78763E8AE /* Pods-ReachabilityDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReachabilityDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReachabilityDemo/Pods-ReachabilityDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		D4E1396F6B034E33DC1973E2 /* Pods-ReachabilityDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReachabilityDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReachabilityDemo/Pods-ReachabilityDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +35,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8272FA728901401AD27C351D /* Pods_ReachabilityDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1918ED58746DFF1BF5248FEF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B431722E2CEAEBC78763E8AE /* Pods-ReachabilityDemo.debug.xcconfig */,
+				D4E1396F6B034E33DC1973E2 /* Pods-ReachabilityDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		495A212A2100466600B1F246 = {
 			isa = PBXGroup;
 			children = (
 				495A21352100466700B1F246 /* ReachabilityDemo */,
 				495A21342100466700B1F246 /* Products */,
+				1918ED58746DFF1BF5248FEF /* Pods */,
+				9549ACCB35AA0ED96C097FDC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,6 +72,7 @@
 		495A21352100466700B1F246 /* ReachabilityDemo */ = {
 			isa = PBXGroup;
 			children = (
+				495A2148210046FB00B1F246 /* Utils */,
 				495A21362100466700B1F246 /* AppDelegate.swift */,
 				495A21382100466700B1F246 /* ViewController.swift */,
 				495A213A2100466700B1F246 /* Main.storyboard */,
@@ -64,6 +83,22 @@
 			path = ReachabilityDemo;
 			sourceTree = "<group>";
 		};
+		495A2148210046FB00B1F246 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				495A21492100470600B1F246 /* ReachabilityManager.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		9549ACCB35AA0ED96C097FDC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A8265DCA02D521D5929C9ED7 /* Pods_ReachabilityDemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +106,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 495A21452100466800B1F246 /* Build configuration list for PBXNativeTarget "ReachabilityDemo" */;
 			buildPhases = (
+				DCFAA3C1BBE8495FA2614075 /* [CP] Check Pods Manifest.lock */,
 				495A212F2100466700B1F246 /* Sources */,
 				495A21302100466700B1F246 /* Frameworks */,
 				495A21312100466700B1F246 /* Resources */,
+				C2E65C2E2B1F4C9C24ADC076 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -96,11 +133,12 @@
 				TargetAttributes = {
 					495A21322100466700B1F246 = {
 						CreatedOnToolsVersion = 9.4;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
 			buildConfigurationList = 495A212E2100466700B1F246 /* Build configuration list for PBXProject "ReachabilityDemo" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -130,12 +168,52 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		C2E65C2E2B1F4C9C24ADC076 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ReachabilityDemo/Pods-ReachabilityDemo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ReachabilityDemo/Pods-ReachabilityDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DCFAA3C1BBE8495FA2614075 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ReachabilityDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		495A212F2100466700B1F246 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				495A21392100466700B1F246 /* ViewController.swift in Sources */,
+				495A214A2100470600B1F246 /* ReachabilityManager.swift in Sources */,
 				495A21372100466700B1F246 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -270,24 +348,25 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
 		495A21462100466800B1F246 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B431722E2CEAEBC78763E8AE /* Pods-ReachabilityDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 8Z93889Z7E;
 				INFOPLIST_FILE = ReachabilityDemo/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = vk.ReachabilityDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "d01dcdfb-84e4-4fb3-834f-4b0228ab6bf9";
+				PROVISIONING_PROFILE_SPECIFIER = Nipl_Development;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -295,16 +374,18 @@
 		};
 		495A21472100466800B1F246 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D4E1396F6B034E33DC1973E2 /* Pods-ReachabilityDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 8Z93889Z7E;
 				INFOPLIST_FILE = ReachabilityDemo/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = vk.ReachabilityDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "d01dcdfb-84e4-4fb3-834f-4b0228ab6bf9";
+				PROVISIONING_PROFILE_SPECIFIER = Nipl_Development;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
